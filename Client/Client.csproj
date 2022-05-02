@@ -16,4 +16,9 @@
     <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
+  <Target Name="CopyConfig" AfterTargets="AfterPublish">
+    <Message Text="Copying Swa Config file" Importance="high" />
+    <Copy SourceFiles="staticwebapp.config.json" DestinationFolder="$(PublishDir)\wwwroot"/>
+  </Target>
+
 </Project>
